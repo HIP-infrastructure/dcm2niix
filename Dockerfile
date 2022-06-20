@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \ 
     curl unzip && \
-    curl -O -L https://github.com/rordenlab/dcm2niix/releases/download/v${APP_VERSION}/dcm2niix_lnx.zip && \
+    curl -OL# https://github.com/rordenlab/dcm2niix/releases/download/v${APP_VERSION}/dcm2niix_lnx.zip && \
     mkdir ./install && \
     unzip -q -d ./install dcm2niix_lnx.zip && \
     chmod 755 ./install/dcm2niix && \
@@ -27,7 +27,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV APP_SHELL="yes"
+ENV APP_SPECIAL="terminal"
 ENV APP_CMD=""
 ENV PROCESS_NAME=""
 ENV APP_DATA_DIR_ARRAY=""
